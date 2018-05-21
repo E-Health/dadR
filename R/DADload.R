@@ -11,12 +11,15 @@
 #' DADload("~/clin_sample_spss.sav")
 DADload <- function(savfile, rdafile = ""){
   # Convert SPSS sav file to Rda
-  dataset = read.spss(savfile, to.data.frame=TRUE)
+  dad_dataset = read.spss(savfile, to.data.frame=TRUE)
+  current_path = dirname(savfile)
+
   if(rdafile != ""){
-    save(dataset,file=rdafile)
+    save(dad_dataset,file=rdafile)
   }else{
-    current_path = dirname(savfile)
-    rdafile <- paste(current_path, "/dadr.rda", sep = "")
-    save(dataset,file=rdafile)
+    #rdafile <- paste(current_path, "dadr.rda", sep = "")
+    rdafile <- file.path(current_path, "dadr.rda", fsep = .Platform$file.sep)
+    save(dad_dataset,file=rdafile)
   }
+  return(current_path)
 }
