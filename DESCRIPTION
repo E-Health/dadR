@@ -1,10 +1,10 @@
 Package: dadR
-Title: What the Package Does (one line, title case)
+Title: Analyze Discharge Abstract Database
 Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Authors@R: person("Bell", "Eapen", email = "gihub_public@gulfdoctor.net", role = c("aut", "cre"))
+Description: Analyze CIHI Discharge Abstract Database
 Depends: R (>= 3.3.2)
-License: What license is it under?
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Imports: foreign
