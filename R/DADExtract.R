@@ -1,5 +1,5 @@
-# Title     : TODO
-# Objective : TODO
+# Title     : DADExtract
+# Objective : Converts the flat file to normalized data tables
 # Created by: beapen
 # Created on: 21/05/18
 
@@ -12,11 +12,22 @@ trim.trailing <- function (x) sub("\\s+$", "", x)
 # returns string w/o leading or trailing whitespace
 trim <- function (x) gsub("^\\s+|\\s+$", "", x)
 
+#' DADExtract converts the flat file to normalized data tables
+#'
+#' @param dad_path_data
+#'
+#' @return string file path where the data tables are saved
+#' @export
+#'
+#' @examples
+#' handle <- DADExtract(DADread(DADload(file_path)))
+#'
 DADExtract <- function(dad_path_data){
     # Get file path and the dataset from the list
     file_path <- dad_path_data$file_path
     dad_dataset <- dad_path_data$dad_dataset
 
+    print("Initializing... This may take some time..")
     # create data table
     dad_demographic <- data.table(
         PID = double(),
@@ -56,8 +67,9 @@ DADExtract <- function(dad_path_data){
         WEIGHT = integer(),
         GESTATION = integer()
     )
-    count = 0
+
     for(i in 1:nrow(dad_dataset)){
+        cat("\r",i)
         row <- list(
             dad_dataset[i, "PATNT_ID"],
             dad_dataset[i, "AGRP_F_D"],
@@ -125,11 +137,6 @@ DADExtract <- function(dad_path_data){
             dad_dataset[i, "GES_AGRP"]
         )
         dad_stay <- rbindlist(list(dad_stay, rowm))
-
-        count <- count + 1
-        if (count>10){
-            break
-        }
     }
 
     print(dad_demographic)
@@ -137,5 +144,27 @@ DADExtract <- function(dad_path_data){
     print(dad_intervention)
     print(dad_care)
     print(dad_stay)
+
+    print("Saving demographic ...")
+    rda_file <- file.path(file_path, "dad_demographic.rda", fsep = .Platform$file.sep)
+    save(dad_demographic,file=rda_file)
+
+    print("Saving morbidity ...")
+    rda_file <- file.path(file_path, "dad_morbidity.rda", fsep = .Platform$file.sep)
+    save(dad_morbidity,file=rda_file)
+
+    print("Saving interventions ...")
+    rda_file <- file.path(file_path, "dad_intervention.rda", fsep = .Platform$file.sep)
+    save(dad_intervention,file=rda_file)
+
+    print("Saving special care ...")
+    rda_file <- file.path(file_path, "dad_care.rda", fsep = .Platform$file.sep)
+    save(dad_care,file=rda_file)
+
+    print("Saving length of stay ...")
+    rda_file <- file.path(file_path, "dad_stay.rda", fsep = .Platform$file.sep)
+    save(dad_stay,file=rda_file)
+
+    return(file_path)
 }
 
