@@ -1,4 +1,4 @@
-# dadR - A Apache Spark enabled library to analyze Discharge Abstract Database
+# dadR - Apache Spark enabled library to analyze Discharge Abstract Database
 
 ## Work in progress
 
