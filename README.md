@@ -2,7 +2,8 @@
 
 ## Work in progress
 
-## Installation (Keep updating always)
+## Installation 
+
 ``` r
 devtools::install_github("E-Health/dadR")
 
@@ -18,7 +19,8 @@ ComputeCanada cluster. (http://computecanada.ca/).
   library(SparkR)
   library(data.table)
   library(foreign)
-
+  library(dadR)
+  
   # Change Master UI here
   sparkR.session(master = "localhost", sparkConfig = list(spark.driver.memory = "3g", spark.executor.memory = "3g"))
 
