@@ -9,10 +9,18 @@ devtools::install_github("E-Health/dadR")
 
 ```
 
+## Modules
+* [x] DADSameDisease - Lists all records with the given diagnosis.
+* [ ] DADSameTreatment - Lists all records with the given intervention.
+* [ ] DADComorbidity - Lists the comorbidities for the given condition.
+* [ ] DADSimilarCases - Lists all records similar to the index case.
+* [ ] DADTlos - Average length of stay for a given condition.
+* [ ] DADInterventions - Lists common Interventions for a given condition.
+* [ ] DADBestInterventions - Lists Interventions with least length of stay for a given condition.
+
 ## How to use
 
-* Install Apache Spark (https://spark.apache.org/). This package is developed and tested using
-ComputeCanada cluster. (http://computecanada.ca/).
+* Install Apache Spark (https://spark.apache.org/). 
 
 ``` r
 
@@ -42,3 +50,4 @@ ComputeCanada cluster. (http://computecanada.ca/).
 ## Contributors
 
 * Bell Eapen (McMaster U) canehealth.com
+* This package is developed and tested using ComputeCanada cluster. (http://computecanada.ca/).
