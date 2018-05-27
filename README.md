@@ -59,12 +59,13 @@ Please cite dadR in your publications if it helped your research. Here is an exa
 
 ```
 
-@misc{eapenbr2018
+@misc{eapenbr2018,
   title={dadR - Spark enabled R package for analyzing discharge abstract database.},
   author={Eapen, Bell Raj and contributors},
   year={2018},
   publisher={GitHub},
-  howpublished={\url{https://github.com/E-Health/dadR}},
+  journal = {GitHub repository},
+  howpublished={\url{https://github.com/E-Health/dadR}}
 }
 
 ```
