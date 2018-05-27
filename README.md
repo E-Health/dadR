@@ -11,7 +11,7 @@ devtools::install_github("E-Health/dadR")
 
 ## Modules
 * [x] DADSameDisease - Lists all records with the given diagnosis.
-* [ ] DADSameTreatment - Lists all records with the given intervention.
+* [x] DADSameTreatment - Lists all records with the given intervention.
 * [ ] DADComorbidity - Lists the comorbidities for the given condition.
 * [ ] DADSimilarCases - Lists all records similar to the index case.
 * [ ] DADTlos - Average length of stay for a given condition.
