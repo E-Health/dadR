@@ -57,6 +57,8 @@ devtools::install_github("E-Health/dadR")
 
 Please cite dadR in your publications if it helped your research. Here is an example BibTeX entry:
 
+```
+
 @misc{eapenbr2018
   title={dadR - Spark enabled R package for analyzing discharge abstract database.},
   author={Eapen, Bell Raj and contributors},
@@ -64,3 +66,5 @@ Please cite dadR in your publications if it helped your research. Here is an exa
   publisher={GitHub},
   howpublished={\url{https://github.com/E-Health/dadR}},
 }
+
+```
