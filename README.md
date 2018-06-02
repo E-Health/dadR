@@ -16,11 +16,15 @@ devtools::install_github("E-Health/dadR")
 ## Modules
 * [x] DADSameDisease - Lists all records with the given diagnosis.
 * [x] DADSameTreatment - Lists all records with the given intervention.
-* [ ] DADComorbidity - Lists the comorbidities for the given condition.
-* [ ] DADSimilarCases - Lists all records similar to the index case.
+* [x] DADComorbidity - Lists the comorbidities for the given condition.
+* [ ] DADSimilarCases - Lists all records similar to the index case (clustering).
 * [ ] DADTlos - Average length of stay for a given condition.
 * [ ] DADInterventions - Lists common Interventions for a given condition.
 * [ ] DADBestInterventions - Lists Interventions with least length of stay for a given condition.
+* [ ] DADInterventions - Lists common Interventions for a given condition.
+* [ ] DADCharlsonIndex - Computes mean Charlson Index for a set of patients.
+* [ ] DADRandomSample - Returns a random set of patients.
+* [ ] DADCointerventions - Lists the cointerventions for the given intervention.
 
 ## How to use
 
