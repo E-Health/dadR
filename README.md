@@ -1,6 +1,8 @@
-# dadR - Apache Spark enabled library to analyze Discharge Abstract Database
+# dadR - Apache Spark enabled R package to analyze Discharge Abstract Database
 
-## Work in progress
+## Why dadR
+
+The DAD database is large and the flat SPSS sav format is not amenable to fast processing and data mining for clinical insights. dadR uses Apache Spark to parallelize search and extraction. Most functions return a Spark data frame. This includes some innovative clustering and other machine learning functions.
 
 ## Installation 
 
@@ -9,18 +11,25 @@ devtools::install_github("E-Health/dadR")
 
 ```
 
+## Work in progress ...... (Feedback and contributions welcome!)
+
 ## Modules
 * [x] DADSameDisease - Lists all records with the given diagnosis.
-* [ ] DADSameTreatment - Lists all records with the given intervention.
-* [ ] DADComorbidity - Lists the comorbidities for the given condition.
-* [ ] DADSimilarCases - Lists all records similar to the index case.
+* [x] DADSameTreatment - Lists all records with the given intervention.
+* [x] DADComorbidity - Lists the comorbidities for the given condition.
+* [ ] DADSimilarCases - Lists all records similar to the index case (clustering).
 * [ ] DADTlos - Average length of stay for a given condition.
 * [ ] DADInterventions - Lists common Interventions for a given condition.
 * [ ] DADBestInterventions - Lists Interventions with least length of stay for a given condition.
+* [ ] DADInterventions - Lists common Interventions for a given condition.
+* [ ] DADCharlsonIndex - Computes mean Charlson Index for a set of patients.
+* [ ] DADRandomSample - Returns a random set of patients.
+* [ ] DADCointerventions - Lists the cointerventions for the given intervention.
 
 ## How to use
 
 * Install Apache Spark (https://spark.apache.org/). 
+* Researchers can download DAD from Odesi. Please make sure that you comply with the licensing terms.
 
 ``` r
 
@@ -43,7 +52,31 @@ devtools::install_github("E-Health/dadR")
 
 ```
 
+## Testing
+```
+devtools::load_all() # Repeat on error
+devtools::test()
+
+```
+
 ## Contributors
 
-* Bell Eapen (McMaster U) canehealth.com
-* This package is developed and tested using ComputeCanada cluster.
+* Bell Eapen (McMaster U) [canehealth.com](http://canehealth.com)
+* This package is developed and tested using [Compute Canada](www.computecanada.ca) resources.
+
+## Citation
+
+Please cite dadR in your publications if it helped your research. Here is an example BibTeX entry:
+
+```
+
+@misc{eapenbr2018,
+  title={dadR - Spark enabled R package for analyzing discharge abstract database.},
+  author={Eapen, Bell Raj and contributors},
+  year={2018},
+  publisher={GitHub},
+  journal = {GitHub repository},
+  howpublished={\url{https://github.com/E-Health/dadR}}
+}
+
+```
