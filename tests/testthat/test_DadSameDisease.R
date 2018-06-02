@@ -1,20 +1,24 @@
 context("Same Disease")
 
-test_that("returns patients with same disease", {
+tmp <- tempfile()
 
-  library(SparkR)
-  library(data.table)
-  library(foreign)
+setup({
 
-  # Change Master UI here
-  sparkR.session(master = "localhost", sparkConfig = list(spark.driver.memory = "3g", spark.executor.memory = "3g"))
+  # writeLines("TEST DATA", tmp)
 
-  DADSparkInit(csvFile = "/path/to/file/dadr.csv")
+})
+teardown({
 
-  spark_df <- sql("SELECT * FROM spark_data_frame WHERE SUB_PROV = 1")
+  print( readLines(tmp) )
+  unlink(tmp)
 
+})
+
+
+test_that('returns patients with same disease', {
+
+  spark_df <- DADSameDisease("G2")
   r_df <- collect(spark_df)
   r_dt <- as.data.table(r_df)
-  r_dt
-
+  expect_known_output(r_dt, tmp, print = TRUE)
 })

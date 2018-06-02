@@ -52,6 +52,13 @@ devtools::install_github("E-Health/dadR")
 
 ```
 
+## Testing
+```
+devtools::load_all() # Repeat on error
+devtools::test()
+
+```
+
 ## Contributors
 
 * Bell Eapen (McMaster U) [canehealth.com](http://canehealth.com)
