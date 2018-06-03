@@ -16,9 +16,7 @@ teardown({
 
 
 test_that('return comorbidities', {
-
-  spark_df <- DADComorbidity("G20")
-  r_df <- collect(spark_df)
-  r_dt <- as.data.table(r_df)
+  # DADComorbidity returns a data table.
+  r_dt <- DADComorbidity("G20")
   expect_known_output(r_dt, tmp, print = TRUE)
 })
