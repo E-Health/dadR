@@ -53,6 +53,9 @@ devtools::install_github("E-Health/dadR")
 ```
 
 ## Testing
+
+* Update Spark Master URL in dadR/tests/testthat/helper.R
+
 ```
 devtools::load_all() # Repeat on error
 devtools::test()
@@ -62,7 +65,7 @@ devtools::test()
 ## Contributors
 
 * Bell Eapen (McMaster U) [canehealth.com](http://canehealth.com)
-* This package is developed and tested using [Compute Canada](www.computecanada.ca) resources.
+* This package is developed and tested using [Compute Canada](http://www.computecanada.ca) resources.
 
 ## Citation
 
