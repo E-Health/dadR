@@ -24,7 +24,7 @@ devtools::install_github("E-Health/dadR")
 * [ ] DADInterventions - Lists common Interventions for a given condition.
 * [ ] DADCharlsonIndex - Computes mean Charlson Index for a set of patients.
 * [ ] DADRandomSample - Returns a random set of patients.
-* [ ] DADCointerventions - Lists the cointerventions for the given intervention.
+* [x] DADCointerventions - Lists the cointerventions for the given intervention.
 
 ## How to use
 
