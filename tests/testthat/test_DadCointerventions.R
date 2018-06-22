@@ -17,6 +17,6 @@ teardown({
 
 test_that('return cointerventions', {
   # DADComorbidity returns a data table.
-  r_dt <- DADCointerventions("I")
+  r_dt <- DADCointerventions("1VA53LAPMN")
   expect_known_output(r_dt, tmp, print = TRUE)
 })

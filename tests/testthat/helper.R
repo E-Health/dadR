@@ -7,7 +7,7 @@ library(foreign)
 # Try to read the master UI from csvFile
 # https://stackoverflow.com/questions/12626637/reading-a-text-file-in-r-line-by-line
     con = file("/home/beapen/scratch/dadr.out", "r")
-    masterui = "spark://cdr541.int.cedar.computecanada.ca:7077"
+    masterui = "add spark ui here"
     while ( TRUE ) {
         line = readLines(con, n = 1)
         if ( length(line) == 0 ) {
