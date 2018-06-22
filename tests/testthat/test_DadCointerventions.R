@@ -1,4 +1,4 @@
-context("Comorbidity")
+context("Cointerventions")
 
 tmp <- tempfile()
 
@@ -15,8 +15,8 @@ teardown({
 })
 
 
-test_that('return comorbidities', {
+test_that('return cointerventions', {
   # DADComorbidity returns a data table.
-  r_dt <- DADComorbidity("G20")
+  r_dt <- DADCointerventions("1VA53LAPMN")
   expect_known_output(r_dt, tmp, print = TRUE)
 })
