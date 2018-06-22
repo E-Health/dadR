@@ -1,4 +1,4 @@
-#' Title DADSameDisease - List all diseases with given diagnosis.
+#' Title DADSameDisease - List all records with given diagnosis.
 #'
 #' @param disease
 #' @param spark_data_frame
