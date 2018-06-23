@@ -21,7 +21,7 @@ devtools::install_github("E-Health/dadR")
 * [x] DADCointerventions - Lists the cointerventions for the given intervention.
 * [ ] DADRandomSample - Returns a random set of patients.
 * [ ] DADSimilarCases - Lists all records similar to the index case (clustering).
-* [ ] DADTlos - Average length of stay for a given condition.
+* [x] DADTlos - Average length of stay for a given condition.
 * [ ] DADComorbidityTlos - Average length of stay for a given set of comorbidities.
 * [ ] DADTlosForTreatment - Average length of stay for a given treatment.
 * [ ] DADBestInterventions - Lists Interventions with least length of stay for a given condition.
