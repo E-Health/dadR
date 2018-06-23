@@ -23,7 +23,7 @@ devtools::install_github("E-Health/dadR")
 * [ ] DADSimilarCases - Lists all records similar to the index case (clustering).
 * [x] DADTlos - Average length of stay for a given condition.
 * [ ] DADComorbidityTlos - Average length of stay for a given set of comorbidities.
-* [ ] DADTlosForTreatment - Average length of stay for a given treatment.
+* [x] DADTlosForTreatment - Average length of stay for a given treatment.
 * [ ] DADBestInterventions - Lists Interventions with least length of stay for a given condition.
 * [ ] DADCharlsonIndex - Computes mean Charlson Index for a set of patients.
 
