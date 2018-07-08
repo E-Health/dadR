@@ -1,5 +1,8 @@
 # dadR - Apache Spark enabled R package to analyze Discharge Abstract Database
 
+## Disclaimer
+*Parts of this material are based on the Canadian Institute for Health Information Discharge Abstract Database Research Analytic Files (sampled from fiscal years 2014-15). However the analysis, conclusions, opinions and statements expressed herein are those of the author(s) and not those of the Canadian Institute for Health Information.*
+
 ## Why dadR
 
 The DAD database is large and the flat SPSS sav format is not amenable to fast processing and data mining for clinical insights. dadR uses Apache Spark to parallelize search and extraction. Most functions return a Spark data frame. This includes some innovative clustering and other machine learning functions.
