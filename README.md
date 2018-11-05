@@ -5,7 +5,7 @@
 
 ## Why dadR
 
-The DAD database is large and the flat SPSS sav format is not amenable to fast processing and data mining for clinical insights. dadR uses Apache Spark to parallelize search and extraction. Most functions return a Spark data frame. This includes some innovative clustering and other machine learning functions.
+The DAD database is large and the flat SPSS sav format is not amenable to fast processing and data mining for clinical insights. `dadR` uses Apache Spark to parallelize search and extraction. Most functions return a Spark data frame. This includes some innovative clustering and other machine learning functions.
 
 ## Installation 
 
@@ -36,24 +36,27 @@ devtools::install_github("E-Health/dadR")
 * Researchers can download DAD from Odesi. Please make sure that you comply with the licensing terms.
 
 ``` r
+library(SparkR)
+library(data.table)
+library(foreign)
+library(dadR)
 
-  library(SparkR)
-  library(data.table)
-  library(foreign)
-  library(dadR)
-  
-  # Change Master UI here
-  sparkR.session(master = "localhost", sparkConfig = list(spark.driver.memory = "3g", spark.executor.memory = "3g"))
+# Change Master UI here
+sparkR.session(
+  master = "localhost",
+  sparkConfig = list(
+    spark.driver.memory = "3g",
+    spark.executor.memory = "3g")
+)
+DADSparkInit(savFile = "path/to/dad_sample_2015.sav")
 
-  DADSparkInit(savFile = "path/to/dad_sample_2015.sav")
+# csv will be automatically created the first time
+DADSparkInit(csvFile = "path/to/dadr.csv")
+spark_df <- DADSameDisease("J08")
+r_df <- collect(spark_df)
 
-  DADSparkInit(csvFile = "path/to/dadr.csv") # csv will be automatically created the first time
-
-  spark_df <- DADSameDisease("J08")
-  r_df <- collect(spark_df)
-  r_dt <- as.data.table(r_df)
-  r_dt  # All records with the diagnosis J08
-
+# All records with the diagnosis J08
+(r_dt <- as.data.table(r_df))
 ```
 
 ## Testing
