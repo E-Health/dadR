@@ -73,6 +73,7 @@ devtools::test()
 
 * Bell Eapen (McMaster U) [canehealth.com](http://canehealth.com)
 * This package is developed and tested using [Compute Canada](http://www.computecanada.ca) resources.
+* See also: [:flashlight: QRMine | Qualitative Research Support Tools in Python](https://github.com/dermatologist/nlp-qrmine)
 
 ## Citation
 
