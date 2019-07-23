@@ -50,7 +50,8 @@ sparkR.session(
 )
 DADSparkInit(savFile = "path/to/dad_sample_2015.sav")
 
-# csv will be automatically created the first time
+# csv file with the filename dadr will be automatically created the first time
+# This can be used for future analysis
 DADSparkInit(csvFile = "path/to/dadr.csv")
 spark_df <- DADSameDisease("J08")
 r_df <- collect(spark_df)
